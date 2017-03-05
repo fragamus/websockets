@@ -3,6 +3,7 @@
   :url ""
   :license {:name "MIT"
             :url  "https://opensource.org/licenses/MIT"}
+  :min-lein-version "2.6.1"
 
   :dependencies [[com.datomic/datomic-free "0.9.5206" :exclusions [joda-time]]
                  [com.taoensso/timbre "4.3.1"]
