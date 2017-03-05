@@ -47,4 +47,25 @@
 
   :repl-options {:init-ns          user
                  :nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
+
+  :uberjar-name "uberjar.jar"
+
+  :source-paths ["src/server"]
+  
+  :profiles {:uberjar {:main       app.core
+                       :aot        :all
+                       :prep-tasks ["compile"
+                                    ["cljsbuild" "once" "production"]]
+                       :cljsbuild  {:builds [{:id           "production"
+                                              :source-paths ["src/client"]
+                                              :jar          true
+                                              :compiler     {:main          app.main
+                                                             :output-to     "resources/public/js/app.min.js"
+                                                             :output-dir    "resources/public/js/prod"
+                                                             :asset-path    "js/prod"
+                                                             :optimizations :simple}}]}}})
+
+
+
+
 )
