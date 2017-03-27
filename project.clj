@@ -55,7 +55,7 @@
                        :prep-tasks ["compile"
                                     ["cljsbuild" "once" "production"]]
                        :cljsbuild  {:builds [{:id           "production"
-                                              :source-paths ["src/client"]
+                                              :source-paths ["src/client" "prod/client"]
                                               :jar          true
                                               :compiler     {:main          cljs.user
                                                              :output-to     "resources/public/js/app.min.js"
