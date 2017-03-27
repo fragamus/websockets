@@ -49,8 +49,6 @@
                  :nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
 
   :uberjar-name "uberjar.jar"
-
-  :source-paths ["src/server"]
   
   :profiles {:uberjar {:main       app.core
                        :aot        :all
@@ -59,7 +57,7 @@
                        :cljsbuild  {:builds [{:id           "production"
                                               :source-paths ["src/client"]
                                               :jar          true
-                                              :compiler     {:main          app.main
+                                              :compiler     {:main          cljs.user
                                                              :output-to     "resources/public/js/app.min.js"
                                                              :output-dir    "resources/public/js/prod"
                                                              :asset-path    "js/prod"
