@@ -61,7 +61,7 @@
                                                              :output-to     "resources/public/js/app.min.js"
                                                              :output-dir    "resources/public/js/prod"
                                                              :asset-path    "js/prod"
-                                                             :optimizations :simple}}]}}})
+                                                             :optimizations :simple}}]}}}
 
 
 
