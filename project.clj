@@ -12,7 +12,6 @@
                  [org.clojure/clojurescript "1.8.51"]
                  [org.omcljs/om "1.0.0-alpha41"]
                  [binaryage/devtools "0.5.2"]
-                 [figwheel-sidecar "0.5.9" :exclusions [ring/ring-core joda-time org.clojure/tools.reader]]
                  [com.cemerick/piggieback "0.2.1"]
                  [org.clojure/tools.nrepl "0.2.12"]
                  [juxt/dirwatch "0.2.3"]
@@ -42,8 +41,6 @@
                                :verbose              false
                                :recompile-dependents true
                                :source-map-timestamp true}}]}
-
-  :figwheel {:css-dirs ["resources/public/css"]}
 
   :repl-options {:init-ns          user
                  :nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
