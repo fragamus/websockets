@@ -22,7 +22,7 @@
 
   :plugins [[lein-cljsbuild "1.1.3"]]
 
-  :source-paths ["dev/server" "src/server"]
+  :source-paths ["src/server"]
 
   :jvm-opts ["-server" "-Xmx1024m" "-Xms512m" "-XX:-OmitStackTraceInFastThrow"]
 
