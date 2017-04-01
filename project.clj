@@ -67,21 +67,8 @@
                    :source-paths ["dev/server"]
                    :figwheel {:css-dirs ["resources/public/css"]}
                    :dependencies [
-
                       [figwheel-sidecar "0.5.9" :exclusions [ring/ring-core joda-time org.clojure/tools.reader]]
-
                    ]
-
-;; the contents of this dev profile are junk from todomvc
-
-;;                   :source-paths ["dev/server" "dev/watcher" "src/server"]
-;;                   :repl-options {
-;;                                  :init-ns          user
-;;                                  :nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]
-;;                                  :port             7001
-;;                                  }
-;;                   :env          {:dev true}
-
           }
 
   }
