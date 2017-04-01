@@ -5,11 +5,12 @@
             :url  "https://opensource.org/licenses/MIT"}
   :min-lein-version "2.6.1"
 
-  :dependencies [[com.datomic/datomic-free "0.9.5206" :exclusions [joda-time]]
+  :dependencies [[com.google.guava/guava "21.0"]
+                 [com.datomic/datomic-free "0.9.5206" :exclusions [joda-time com.google.guava/guava]]
                  [com.taoensso/timbre "4.3.1"]
                  [commons-codec "1.10"]
                  [org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.8.51"]
+                 [org.clojure/clojurescript "1.8.51" :exclusions [com.google.guava/guava]]
                  [org.omcljs/om "1.0.0-alpha41"]
                  [binaryage/devtools "0.5.2"]
                  [com.cemerick/piggieback "0.2.1"]
@@ -18,7 +19,7 @@
                  [navis/untangled-client "0.6.0" :exclusions [cljsjs/react org.omcljs/om]]
                  [navis/untangled-server "0.5.1"]
                  [navis/untangled-spec "0.3.6"]
-                 [navis/untangled-websockets "0.2.0"]]
+                 [navis/untangled-websockets "0.2.0" :exclusions [com.google.guava/guava]]]
 
   :plugins [[lein-cljsbuild "1.1.3"]]
 
@@ -47,7 +48,9 @@
 
   :uberjar-name "uberjar.jar"
   
-  :profiles {:uberjar {:main       app.core
+  :profiles {
+
+          :uberjar {:main       app.core
                        :aot        :all
                        :prep-tasks ["compile"
                                     ["cljsbuild" "once" "production"]]
@@ -57,8 +60,31 @@
                                               :compiler     {:main          cljs.user
                                                              :output-to     "resources/public/js/app.min.js"
                                                              :output-dir    "resources/public/js/prod"
-                                                             :asset-path    "js/prod"
-                                                             :optimizations :simple}}]}}}
+                                                             :asset-path    "js/prod"                         
+                                                             :optimizations :simple}}]}}
+
+          :dev {
+                   :source-paths ["dev/server"]
+                   :figwheel {:css-dirs ["resources/public/css"]}
+                   :dependencies [
+
+                      [figwheel-sidecar "0.5.9" :exclusions [ring/ring-core joda-time org.clojure/tools.reader]]
+
+                   ]
+
+;; the contents of this dev profile are junk from todomvc
+
+;;                   :source-paths ["dev/server" "dev/watcher" "src/server"]
+;;                   :repl-options {
+;;                                  :init-ns          user
+;;                                  :nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]
+;;                                  :port             7001
+;;                                  }
+;;                   :env          {:dev true}
+
+          }
+
+  }
 
 
 
