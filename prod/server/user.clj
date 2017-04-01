@@ -31,3 +31,9 @@
   []
   (stop)
   (refresh :after 'user/go))
+
+(defn -main
+    "Main entry point for the server"
+    [& args]
+    (do (printf "starting app .......... config=\"%s\" ........." (System/getProperty "config"))  (go)) ) 
+
