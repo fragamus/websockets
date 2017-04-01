@@ -51,6 +51,7 @@
   :profiles {
 
           :uberjar {:main       app.core
+                       :source-paths ["prod/server"]
                        :aot        :all
                        :prep-tasks ["compile"
                                     ["cljsbuild" "once" "production"]]
