@@ -5,7 +5,8 @@
     [clojure.tools.namespace.repl :refer [disable-reload! refresh clear set-refresh-dirs]]
     [com.stuartsierra.component :as component]
     [app.system :as sys]
-    [taoensso.timbre :as timbre]))
+    [taoensso.timbre :as timbre])
+  (:gen-class))
 
 
 (defonce system (atom nil))
