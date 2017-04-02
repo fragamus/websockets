@@ -5,7 +5,9 @@
             :url  "https://opensource.org/licenses/MIT"}
   :min-lein-version "2.6.1"
 
-  :dependencies [[com.google.guava/guava "21.0"]
+  :dependencies [
+                 [com.stuartsierra/component "0.3.2"]
+                 [com.google.guava/guava "21.0"]
                  [com.datomic/datomic-free "0.9.5206" :exclusions [joda-time com.google.guava/guava]]
                  [com.taoensso/timbre "4.3.1"]
                  [commons-codec "1.10"]
@@ -17,7 +19,7 @@
                  [org.clojure/tools.nrepl "0.2.12"]
                  [juxt/dirwatch "0.2.3"]
                  [navis/untangled-client "0.6.0" :exclusions [cljsjs/react org.omcljs/om]]
-                 [navis/untangled-server "0.5.1"]
+                 [navis/untangled-server "0.5.1" :exclusions [com.stuartsierra/component]]
                  [navis/untangled-spec "0.3.6"]
                  [navis/untangled-websockets "0.2.0" :exclusions [com.google.guava/guava]]]
 
