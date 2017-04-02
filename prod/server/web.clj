@@ -1,4 +1,4 @@
-(ns app.web
+(ns web
   (:require
     [clojure.pprint :refer (pprint)]
     [clojure.stacktrace :refer (print-stack-trace)]
@@ -6,7 +6,7 @@
     [com.stuartsierra.component :as component]
     [app.system :as sys]
     [taoensso.timbre :as timbre])
-  (:gen-class))
+  )
 
 
 (defonce system (atom nil))
