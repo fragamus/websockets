@@ -6,7 +6,8 @@
     [com.stuartsierra.component :as component]
     [figwheel-sidecar.system :as fig]
     [app.system :as sys]
-    [taoensso.timbre :as timbre]))
+    [taoensso.timbre :as timbre])
+  (:gen-class))
 
 ;;FIGWHEEL
 (def figwheel (atom nil))
