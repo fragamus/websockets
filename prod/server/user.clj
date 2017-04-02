@@ -1,4 +1,4 @@
-(ns app.web
+(ns app.core
   (:require
     [clojure.pprint :refer (pprint)]
     [clojure.stacktrace :refer (print-stack-trace)]
