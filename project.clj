@@ -52,7 +52,7 @@
   
   :profiles {
 
-          :uberjar {:main       app.core
+          :uberjar {:main       app.web
                        :source-paths ["prod/server"]
                        :aot        :all
                        :prep-tasks ["compile"
