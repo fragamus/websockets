@@ -48,7 +48,7 @@
   :repl-options {:init-ns          user
                  :nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
 
-  :uberjar-name "uberjar.jar"
+  :uberjar-name "app.jar"
   
   :profiles {
 
